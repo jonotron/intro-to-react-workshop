@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import ReactDOM from 'react-dom'
 
 import 'milligram'
@@ -55,37 +56,23 @@ function DataIntoComponents(props) {
     </div>
   )
 }
-function foo(junk) {
-  console.log(junk)
-  console.log(junk)
-}
 
-class InputEcho extends React.Component {
-  state = { name: '' }
+function InputEcho() {
+  const [name, setName] = useState('nothing')
 
-  updateName = event => {
-    this.setState({ name: event.target.value })
-  }
-
-  clearName = () => {
-    this.setState({ name: '' })
-  }
-
-  render() {
-    return (
-      <div>
-        <input
-          type="text"
-          placeholder="Your name"
-          value={this.state.name}
-          onChange={this.updateName}
-        />
-        {this.state.name ? `Your name: ${this.state.name}` : ''}
-        <br />
-        <button onClick={this.clearName}>Clear</button>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Your name"
+        value={name}
+        onChange={e => setName(e.target.value)}
+      />
+      {name ? `Your name: ${name}` : ''}
+      <br />
+      <button onClick={() => setName('')}>Clear</button>
+    </div>
+  )
 }
 
 const rootElement = document.getElementById('root')
