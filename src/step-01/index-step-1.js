@@ -8,9 +8,10 @@ import ReactDOM from 'react-dom'
 // just so our app doesn't look terrible
 import 'milligram'
 
+// a constant... feel free to type in your own name, see what it does
 const name = 'Jonathan'
 // this is a simple javascript object, we'll store our states in it
-const stats = {
+let stats = {
   water: 2
 }
 
@@ -23,7 +24,9 @@ function App() {
   // 2) comments are gross
   return (
     <div className="App">
-      {/* this is a comment in jsx - we rarely use them*/}
+      {/* this is a comment in JSX - we rarely use them*/}
+
+      {/* JSX lets us use expressions anywhere we want... just put {} around them */}
       <h1>{name + `'s`} Water Tracker</h1>
 
       <p>2 glasses of water</p>
