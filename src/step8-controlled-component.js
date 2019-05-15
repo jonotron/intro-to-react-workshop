@@ -5,6 +5,8 @@ import 'milligram'
 
 const name = 'Jonathan'
 
+// Fixed! Using a controlled component.
+// That's it! You know enough react to be dangerous!
 function App() {
   const [stats, setStats] = useState([
     { day: 3, water: 0 },
@@ -13,19 +15,15 @@ function App() {
   ])
   const [water, setWater] = useState(0)
   const incWater = amount => () => setWater(water + amount)
-  const message = 'My message'
+  const [message, setMessage] = useState('')
 
   const logWater = () => {
     setWater(0)
+    setMessage('')
     const day = stats[0].day + 1
-    const newRecord = { day: day, water: water }
+    const newRecord = { day: day, water: water, message: message }
     setStats([newRecord, ...stats])
   }
-
-  // We've added a simple change handler that just logs
-  // the event for now. Go see where it's used on the input
-  // element
-  const handleChange = e => console.log(e.target.value)
 
   return (
     <div className="App">
@@ -44,12 +42,11 @@ function App() {
         +4
       </button>
       <div>
-        {/*Here we have an input box. What happens when you type?
-            (Check the console). Why is this happening?
-            TODO: Fix this so the input updates as you type
-            TODO: Make the logWater function also add the message
-                  for the day and update the table to display the message*/}
-        <input type="text" value={message} onChange={handleChange} />
+        <input
+          type="text"
+          value={message}
+          onChange={e => setMessage(e.target.value)}
+        />
         <button className="button" onClick={() => logWater()}>
           ✅ Log Day
         </button>
@@ -59,6 +56,7 @@ function App() {
           <tr>
             <th>Day</th>
             <th>Water</th>
+            <th>Message</th>
           </tr>
         </thead>
 
@@ -69,6 +67,7 @@ function App() {
               <td>
                 <WaterCount amount={record.water} />
               </td>
+              <td>{record.message}</td>
             </tr>
           ))}
         </tbody>

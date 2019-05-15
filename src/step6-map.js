@@ -55,7 +55,7 @@ function App() {
       <button className="button" onClick={incWater(4)}>
         +4
       </button>
-      <button className="button" onClick={() => logWater(water)}>
+      <button className="button" onClick={() => logWater()}>
         ✅ Log Day
       </button>
       <table>
