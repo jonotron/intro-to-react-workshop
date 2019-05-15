@@ -43,17 +43,17 @@ function App() {
     <div className="App">
       <h1>{name + `'s`} Water Tracker</h1>
       <button className="button button-outline" onClick={incWater(-4)}>
-        -💧💧💧💧
+        -4
       </button>
       <button className="button button-outline" onClick={incWater(-1)}>
-        -💧
+        -1
       </button>
       <span style={style}>{water}</span> 💧
       <button className="button" onClick={incWater(1)}>
-        +💧
+        +1
       </button>
       <button className="button" onClick={incWater(4)}>
-        +💧💧💧💧
+        +4
       </button>
       <button className="button" onClick={() => logWater(water)}>
         ✅ Log Day

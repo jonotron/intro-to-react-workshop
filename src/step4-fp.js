@@ -17,10 +17,10 @@ function App() {
     <div className="App">
       <h1>{name + `'s`} Water Tracker</h1>
 
-      <button onClick={incWater(1)}>+💧</button>
-      <button onClick={incWater(-1)}>-💧</button>
-      <button onClick={incWater(4)}>+💧💧💧💧</button>
-      <button onClick={incWater(-4)}>-💧💧💧💧</button>
+      <button onClick={incWater(-4)}>-4</button>
+      <button onClick={incWater(-1)}>-1</button>
+      <button onClick={incWater(1)}>+1</button>
+      <button onClick={incWater(4)}>+4</button>
 
       <p>{water} 💧</p>
     </div>

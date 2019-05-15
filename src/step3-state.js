@@ -17,7 +17,7 @@ function App() {
 
       {/* This is an arrow function. It's a little version of a function that you can define
            in one line. Handy for click handlers like this */}
-      <button onClick={() => setWater(water + 1)}>+💧</button>
+      <button onClick={() => setWater(water + 1)}>+1</button>
 
       <p>{water} 💧</p>
     </div>
