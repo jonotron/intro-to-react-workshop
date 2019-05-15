@@ -14,9 +14,7 @@ function App() {
         <li>
           Go to{' '}
           <strong>
-            <a href="http://bit.ly/tsrintroreact">
-              http://bit.ly/tsrintroreact
-            </a>
+            <a href="http://bit.ly/tsrlvl1react">http://bit.ly/tsrlvl1react</a>
           </strong>
         </li>
         <li>Fork the project</li>
